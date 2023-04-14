@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detran</title>
+</head>
+<body>
+    <h1>Sistema de Multas</h1>
+    Velocidade do carro<input type="number" name="txtvel" id="txtvel">Km/H
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res">Resultado</div>
+    <script>
+
+        function calcular (){
+            var txtvel = window.document.body.querySelector('input#txtvel')//selecionando input do html
+            var res = window.document.querySelector('div#res')
+            var vel = Number(txtvel.value)//passando string para number
+            res.innerHTML = `<p>sua velocidade atual é <strong>${vel} Km/h</strong></p>`
+            if(vel > 60){
+                res.innerHTML += `voce esta multado por excesso de velocidade`/*não posso simplesmente colocar o simbolo = pois 
+                o innerHTML mudaria de valor anterior para esse novo, por isso faço uma concatenação com += para ser adicionado
+                novo paragrafo*/
+            }
+            res.innerHTML += `<p>Dirija sempre com cuidado</p>`//aqui com o símbolo += fiz uma concatenação
+        }
+
+    </script>
+</body>
+</html>

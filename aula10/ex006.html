@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Dom</title>
+    <style>
+        div#area {
+            font: normal 20pt Arial;
+            background: green;
+            color: white;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center
+        }
+    </style>
+</head>
+<body>
+
+    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> 
+        Interaja...
+    </div>
+
+    <script>
+        //o exemplo abaixo mostra como configurar eventos pelo javascript ao inves do html
+
+        // var area = window.document.getElementById('area')
+        // area.addEventListener('click', clicar)
+        // area.addEventListener('mouseenter', entrar)
+        // area.addEventListener('mouseout', sair)
+
+        //click é uma palavra reservada que indica que o evento sera feito depois de um click
+        //a palavra 'clicar' faz referencia á função já criada
+
+        ///////////////////////////////////////////////////////////////////////
+
+        function clicar(){
+             var area = window.document.getElementById('area')//preciso fazer a ligação com html
+             area.innerText = 'Clicou'//estou dizendo que quando eu clicar na div o texto vai mudar
+             area.style.background = 'red'
+        }
+
+        function entrar(){
+            var area = window.document.getElementById('area')//preciso fazer a ligação com html
+            area.innerText = 'Entrou'
+        }
+
+        function sair(){
+            var area = window.document.getElementById('area')//preciso fazer a ligação com html
+            area.innerText = 'Saiu'
+            area.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

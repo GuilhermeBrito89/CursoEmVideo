@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiros passos com DOM</title>
+    <style>
+        body{
+            background-color: orange;
+            color: aliceblue;
+            font: normal 18pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos com DOM</h1>
+    <p>Aqui vai o resultado</p>
+    <p>Aprendendo a utilizar <strong>DOM</strong> em JavaScript</p>
+    <div id="msg">Clique em mim</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0   ]/*aqui estou dizendo pro js selecionar a tag p,
+        e esse zero significa que ele vai selecionar a primeira tag p do body*/
+        var corpo = window.document.body//estou dizendo que a variavel corpo recebe o body do html
+        window.document.write('Esta escrito assim ' + p1.innerText)//estou mandando o js escrever o texto de dentro do p1
+        window.corpo.style.background = 'lightgreen'//estou dizendo que o background do body deve ser preto
+        p1.style.color = 'yellow'
+        //innerText pega o texto sem formataçao, 
+        //o innerHTML pega o texto com a formataçao do html
+        var d = window.document.getElementById('msg')//criei uma variavel que recebe a div msg
+        d.style.background = 'lightblue'
+        d.innerHTML= 'Ola, tudo bem?'//mudei o texto da div msg por js
+        window.document.getElementById('msg').innerText = 'Mudei o texto dnv, so que com mais trabalho'
+        //no paragrafo acima mudeino texto dnv mas com o codigo mais completo
+        //var d = window.document.getElementsByName('msg')[0]
+        //paragrafo acima com exemplo para modificar a div por nome
+        var div = document.querySelector('div#msg')//'#' é para id, e '.' é para classe
+        div.style.background = 'black'/*mudei a o background da div dnv so
+        que agora com o querySelector*/
+    </script>
+</body>
+</html>
