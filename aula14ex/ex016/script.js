@@ -5,19 +5,40 @@ function contar (){
     let res = document.getElementById('res')
 
     if (inicio.value.length == 0|| fim.value.length == 0|| passo.value.length == 0){
-        window.alert('[ERRO] está faltando alguma informação')// o teste é sobre a quantidade de caracteres e não do valor do campo.
+        window.alert('[ERRO] está faltando alguma informação')/*o código == 0 é sobre a quantidade 
+        de caracteres e não do valor do campo, ou seja, se não tiver valor nenhum no campo aparecerá
+        o window.alert*/
+        res.innerHTML = 'Não é possivel realizar a contagem...'
     } else {
 
-        res.innerHTML = 'Contando: '
+        res.innerHTML = 'Contando: <br>'
         let i = Number(inicio.value)
         let f = Number(fim.value)
         let p = Number(passo.value)
+            if (p <= 0){
+                window.alert('passo invalido, considerando passo sendo 1')
+                p = 1
+            }
+            if(i <= f){
+                //CONTAGEM CRESCENTE (SE I FOR MENOR OU IGUAL QUE F)
+                for (let c = i; c <= f; c += p) {
 
-        for (let c = i; c <= f; c += p){
-                res.innerHTML += `${c} `//INCREMENTAÇÃO res.innerHTML = res.innerHTML + c 
-        }
+                res.innerHTML += ` ${c} \u{1F449} `//INCREMENTAÇÃO res.innerHTML = res.innerHTML + c
+                //Contando: + valor de c + emoji do dedo apontando
 
-        
+                }
+
+            } else {
+                //CONTAGEM REGRESSIVA()
+                for (let c = i; c >= f; c -= p){
+
+                    res.innerHTML += ` ${c} \u{1F449} `
+                    //Contando: + valor de c + emoji do dedo apontando
+                }
+                
+            }
+
+    res.innerHTML += `\u{1F3C1}`//CÓDIGO ADICIONA A BANDEIRA DEPOIS QUE O BLOCO DAS REPETIÇÕES SÃO FEITOS
     }
 }
 
