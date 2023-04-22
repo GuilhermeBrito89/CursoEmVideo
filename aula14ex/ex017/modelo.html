@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modelo de Exercicio</title>
+    <title>Tabuada</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
     <header>
-        <h1>Titulo</h1>
+        <h1>Tabuada</h1>
     </header>
     <section>
         <div>
-            Testando...
+            <p>Número: <input type="number" name="num" id="txtn"> 
+            <input type="button" value="Gerar Tabuada" onclick="tabuada()"> </p>
         </div>
         <div>
-            Olá
+            <select name="tabuada" id="seltabuada" size="10"><!-- crio 10 espaços para aparecer de uma vez -->
+                <!-- <option value="valor1">Valor 1</option>
+                <option value="valor2">Valor 2</option> 
+                criando opçoes pelo html como exemplo, mas nesse exercicio crio 
+                os option pelo js--><option>Digite um número</option>
+            </select>
         </div>
     </section>
     <footer>
